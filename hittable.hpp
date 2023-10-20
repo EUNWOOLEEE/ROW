@@ -1,5 +1,5 @@
-#ifndef HITTABLE_HPP
-# define HITTABLE_HPP
+#ifndef object_HPP
+# define object_HPP
 
 # include "rtweekend.hpp"
 
@@ -19,7 +19,7 @@ struct hit_record{
 	}
 };
 
-class hittable{
+class object{
 	
 	public:
 		virtual bool hit(const ray& r, double t_min, double t_max, hit_record& rec) const = 0;

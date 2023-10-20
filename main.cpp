@@ -3,11 +3,11 @@
 #include "sphere.hpp"
 #include "camera.hpp"
 #include "rtweekend.hpp"
-#include "hittable_list.hpp"
+#include "object_list.hpp"
 #include "vec3.hpp"
 #include "material.hpp"
 
-color ray_color(const ray& r, const hittable& world, int depth){
+color ray_color(const ray& r, const object& world, int depth){
 	hit_record rec;
 
 	// If we've exceeded the ray bound limit, no more light is gathered
@@ -25,8 +25,8 @@ color ray_color(const ray& r, const hittable& world, int depth){
 	return (1.0 - t) * color(1.0, 1.0, 1.0) + t * color(0.5, 0.7, 1.0);
 }
 
-hittable_list random_scene(){
-	hittable_list world;
+object_list random_scene(){
+	object_list world;
 
 	auto ground_material = make_shared<lambertian>(color(0.5, 0.5, 0.5));
 	world.add(make_shared<sphere>(point3(0, -1000, 0), 1000, ground_material));

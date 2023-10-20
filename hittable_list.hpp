@@ -1,28 +1,28 @@
-#ifndef HITTABLE_LIST_HPP
-# define HITTABLE_LIST_HPP
+#ifndef object_LIST_HPP
+# define object_LIST_HPP
 
 # include <memory>
 # include <vector>
-# include "hittable.hpp"
+# include "object.hpp"
 
 using std::shared_ptr;
 using std::make_shared;
 
-class hittable_list : public hittable{
+class object_list : public object{
 
 	public:
-		hittable_list() {}
-		hittable_list(shared_ptr<hittable> object) { add(object); }
+		object_list() {}
+		object_list(shared_ptr<object> object) { add(object); }
 
 		void clear() { objects.clear(); }
-		void add(shared_ptr<hittable> object) { objects.push_back(object); }
+		void add(shared_ptr<object> object) { objects.push_back(object); }
 
 		virtual bool hit(const ray& r, double t_min, double t_max, hit_record& rec) const override;
 
-		std::vector<shared_ptr<hittable>> objects;
+		std::vector<shared_ptr<object>> objects;
 };
 
-bool hittable_list::hit(const ray&r, double t_min, double t_max, hit_record& rec) const {
+bool object_list::hit(const ray&r, double t_min, double t_max, hit_record& rec) const {
 	hit_record temp_rec;
 	bool hit_anything = false;
 	auto closest_so_far = t_max;

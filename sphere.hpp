@@ -2,9 +2,9 @@
 # define SPHERE_H
 
 # include "vec3.hpp"
-# include "hittable.hpp"
+# include "object.hpp"
 
-class sphere : public hittable{
+class sphere : public object{
 	
 	public:
 		sphere() {}
