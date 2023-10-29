@@ -3,7 +3,7 @@
 
 # include <memory>
 # include <vector>
-# include "object.hpp"
+# include "hittable.hpp"
 
 using std::shared_ptr;
 using std::make_shared;

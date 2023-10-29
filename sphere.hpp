@@ -2,7 +2,7 @@
 # define SPHERE_H
 
 # include "vec3.hpp"
-# include "object.hpp"
+# include "hittable.hpp"
 
 class sphere : public object{
 	

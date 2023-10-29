@@ -3,7 +3,7 @@
 #include "sphere.hpp"
 #include "camera.hpp"
 #include "rtweekend.hpp"
-#include "object_list.hpp"
+#include "hittable_list.hpp"
 #include "vec3.hpp"
 #include "material.hpp"
 
